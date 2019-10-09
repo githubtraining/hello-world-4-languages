@@ -1,0 +1,20 @@
+title: hello-world-6-languages
+tagline: A brand new course on Learning Lab
+description: >-
+  If you are considering getting in to programming, this course will show you
+  how to say Hello World! in 6 different programming languages and explain why
+  you might want to learn each one.
+template:
+  repo: hello-world-6-languages-template
+  name: hello-world-6-languages
+before:
+  - type: createIssue
+    title: Welcome!
+    body: new-issue.md
+steps:
+  - title: First step
+    description: The first step in your course
+    event: issues.assigned
+    link: '{{ repoUrl }}'
+    actions:
+      - type: closeIssue
