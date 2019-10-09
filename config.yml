@@ -1,9 +1,9 @@
-title: hello-world-6-languages
-tagline: A brand new course on Learning Lab
+title: 6 programming languages you should learn
+tagline: >-
+  Take a tour of 6 popular programming languages and decide what you'll learn
+  next.
 description: >-
-  If you are considering getting in to programming, this course will show you
-  how to say Hello World! in 6 different programming languages and explain why
-  you might want to learn each one.
+  Getting started in programming can be overwhelming. What should you build first? Which programming language should you use? This course will help you take these important first steps. 
 template:
   repo: hello-world-6-languages-template
   name: hello-world-6-languages
