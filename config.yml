@@ -1,6 +1,5 @@
-title: 6 programming languages you should learn
-tagline: >-
-  Take a tour of 6 popular programming languages and decide what you'll learn next.
+title: 4 programming languages you should learn
+tagline: Take a tour of 4 popular programming languages and decide what you'll learn.
 description: >-
   Getting started in programming can be overwhelming. What should you build
   first? Which programming language should you use? This course will help you
@@ -8,7 +7,7 @@ description: >-
 template:
   repo: hello-world-6-languages-template
   name: hello-world-6-languages
-  description: Say Hello World! in 6 different programming languages
+  description: Say Hello World! in 4 different programming languages
 before:
   - type: createIssue
     title: Start Here! Introduction to programming languages
@@ -33,16 +32,6 @@ before:
     body: 01-ruby-intro.md
     head: add-ruby
     action_id: ruby_pr
-  - type: createPullRequest
-    title: Say Hello World with Go
-    body: 01-go-intro.md
-    head: add-go
-    action_id: go_pr
-  - type: createPullRequest
-    title: Say Hello World with Rust
-    body: 01-rust-intro.md
-    head: add-rust
-    action_id: rust_pr
   - type: closeIssue
     issue: '2'
   - type: closeIssue
@@ -51,20 +40,25 @@ before:
     issue: '4'
   - type: closeIssue
     issue: '5'
-  - type: closeIssue
-    issue: '6'
-  - type: closeIssue
-    issue: '7'
 steps:
-  - title: Overview of programming languages
-    description: Learn about the role of programming languages
+  - title: What should you learn first?
+    description: >-
+      Learn about the role of programming languages and how they are used in
+      real projects
     event: issues.closed
-    link: '{{ repoUrl }}'
+    link: '{{ repoUrl }}/issues/1'
     actions:
-      - type: closeIssue
       - type: octokit
         method: issues.update
         owner: '%actions.html-pr.data.head.repo.owner.login%'
         repo: '%actions.html-pr.data.head.repo.name%'
         number: '%actions.html-pr.data.number%'
         state: open
+  - title: Say Hello World! with HTML
+    actions:
+      - type: createIssue
+        title: A new issue
+        body: a-response-file.md
+    description: Most people learn HTML first. Find out why ...
+    link: '{{ repoUrl }}/issues/2'
+    event: push
