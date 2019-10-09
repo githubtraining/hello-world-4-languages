@@ -1,7 +1,6 @@
 title: 6 programming languages you should learn
 tagline: >-
-  Take a tour of 6 popular programming languages and decide what you'll learn
-  next.
+  Take a tour of 6 popular programming languages and decide what you'll learn next.
 description: >-
   Getting started in programming can be overwhelming. What should you build
   first? Which programming language should you use? This course will help you
@@ -16,28 +15,34 @@ before:
     body: new-issue.md
   - type: createPullRequest
     title: Say Hello World with HTML
+    body: 01-html-intro.md
     head: add-html
-    action_id: html-pr
+    action_id: html_pr
   - type: createPullRequest
     title: Say Hello World with Javascript
+    body: 01-javascript-intro.md
     head: add-javascript
-    action_id: javascript-pr
+    action_id: javascript_pr
   - type: createPullRequest
     title: Say Hello World with Python
+    body: 01-python-intro.md
     head: add-python
-    action_id: python-pr
+    action_id: python_pr
   - type: createPullRequest
     title: Say Hello World with Ruby
+    body: 01-ruby-intro.md
     head: add-ruby
-    action_id: ruby-pr
+    action_id: ruby_pr
   - type: createPullRequest
     title: Say Hello World with Go
+    body: 01-go-intro.md
     head: add-go
-    action_id: go-pr
+    action_id: go_pr
   - type: createPullRequest
     title: Say Hello World with Rust
+    body: 01-rust-intro.md
     head: add-rust
-    action_id: rust-pr
+    action_id: rust_pr
   - type: closeIssue
     issue: '2'
   - type: closeIssue
