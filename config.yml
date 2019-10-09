@@ -1,19 +1,65 @@
 title: 6 programming languages you should learn
 tagline: >-
-  Take a tour of 6 popular programming languages and decide what you'll learn next.
+  Take a tour of 6 popular programming languages and decide what you'll learn
+  next.
 description: >-
-  Getting started in programming can be overwhelming. What should you build first? Which programming language should you use? This course will help you take these important first steps. 
+  Getting started in programming can be overwhelming. What should you build
+  first? Which programming language should you use? This course will help you
+  take these important first steps. 
 template:
   repo: hello-world-6-languages-template
   name: hello-world-6-languages
+  description: Say Hello World! in 6 different programming languages
 before:
   - type: createIssue
-    title: Welcome!
+    title: Start Here! Introduction to programming languages
     body: new-issue.md
+  - type: createPullRequest
+    title: Say Hello World with HTML
+    head: add-html
+    action_id: html-pr
+  - type: createPullRequest
+    title: Say Hello World with Javascript
+    head: add-javascript
+    action_id: javascript-pr
+  - type: createPullRequest
+    title: Say Hello World with Python
+    head: add-python
+    action_id: python-pr
+  - type: createPullRequest
+    title: Say Hello World with Ruby
+    head: add-ruby
+    action_id: ruby-pr
+  - type: createPullRequest
+    title: Say Hello World with Go
+    head: add-go
+    action_id: go-pr
+  - type: createPullRequest
+    title: Say Hello World with Rust
+    head: add-rust
+    action_id: rust-pr
+  - type: closeIssue
+    issue: '2'
+  - type: closeIssue
+    issue: '3'
+  - type: closeIssue
+    issue: '4'
+  - type: closeIssue
+    issue: '5'
+  - type: closeIssue
+    issue: '6'
+  - type: closeIssue
+    issue: '7'
 steps:
-  - title: First step
-    description: The first step in your course
-    event: issues.assigned
+  - title: Overview of programming languages
+    description: Learn about the role of programming languages
+    event: issues.closed
     link: '{{ repoUrl }}'
     actions:
       - type: closeIssue
+      - type: octokit
+        method: issues.update
+        owner: '%actions.html-pr.data.head.repo.owner.login%'
+        repo: '%actions.html-pr.data.head.repo.name%'
+        number: '%actions.html-pr.data.number%'
+        state: open
