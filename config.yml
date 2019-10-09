@@ -11,7 +11,7 @@ template:
 before:
   - type: createIssue
     title: Start Here! Introduction to programming languages
-    body: new-issue.md
+    body: welcome-issue.md
   - type: createPullRequest
     title: Say Hello World with HTML
     body: 01-html-intro.md
@@ -54,6 +54,8 @@ steps:
         repo: '%actions.html_pr.data.head.repo.name%'
         number: '%actions.html_pr.data.number%'
         state: open
+      - type: respond
+        with: 02-go-to-html.md
   - title: Say Hello World! with HTML
     description: Most people learn HTML first. Find out why ...
     event: pull_request.closed
