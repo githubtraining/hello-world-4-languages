@@ -12,8 +12,6 @@ HTML documents are text files made up of HTML **elements**. An HTML element cont
 
 In this pull request, we are creating an html document called `index.html`. If we were to open this file in our browser, the body of the page would display "Hello World!". Click on the files changed` tab to view its contents.
 
-<screenshot of file>
-
 <!DOCTYPE html>
 <html>
 
@@ -33,11 +31,11 @@ In this pull request, we are creating an html document called `index.html`. If w
 The first item at the top of any HTML file is the doctype. The <!DOCTYPE html> declaration tells the browser that this document is HTML5.
 
 Let's identify the HTML elements in this file.
-The <html> element is the root element of an HTML page
-The <head> element contains metadata which is data about the HTML document, including the <title> element as described below.
-The <title> element defines a title in the browser tab as well as for the page in search engine results.
-The <body> element contains the content of the page visible to the user.
-The <p> element defines a paragraph.
+- The <html> element is the root element of an HTML page
+- The <head> element contains metadata which is data about the HTML document, including the <title> element as described below.
+- The <title> element defines a title in the browser tab as well as for the page in search engine results.
+- The <body> element contains the content of the page visible to the user.
+- The <p> element defines a paragraph.
 
 **Nested Elements**
 
@@ -50,3 +48,7 @@ If you'd like to learn about other HTML elements, check out [this documentation]
 **`.html` file extension**
 
 Lastly, notice how the file names end in `.html`. All html documents end in .html.
+
+### Activity: Merge this pull request
+
+Merge this PR to add the html file to this repository. I will respond with a link to a new pull request so we can learn about JavaScript.
