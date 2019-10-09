@@ -50,15 +50,73 @@ steps:
     actions:
       - type: octokit
         method: issues.update
-        owner: '%actions.html-pr.data.head.repo.owner.login%'
-        repo: '%actions.html-pr.data.head.repo.name%'
-        number: '%actions.html-pr.data.number%'
+        owner: '%actions.html_pr.data.head.repo.owner.login%'
+        repo: '%actions.html_pr.data.head.repo.name%'
+        number: '%actions.html_pr.data.number%'
         state: open
   - title: Say Hello World! with HTML
-    actions:
-      - type: createIssue
-        title: A new issue
-        body: a-response-file.md
     description: Most people learn HTML first. Find out why ...
-    link: '{{ repoUrl }}/issues/2'
-    event: push
+    event: pull_request.closed
+    link: '{{ repoUrl }}/pull/2'
+    actions:
+      - type: gate
+        left: '%payload.pull_request.merged%'
+        else:
+          - type: respond
+            with: reopen.md
+      - type: octokit
+        method: issues.update
+        owner: '%actions.javascript_pr.data.head.repo.owner.login%'
+        repo: '%actions.javascript_pr.data.head.repo.name%'
+        number: '%actions.javascript_pr.data.number%'
+        state: open
+      - type: respond
+        with: 02-go-to-javascript.md
+ - title: Say Hello World! with Javascript
+    description: Kick it up a notch with this common language
+    event: pull_request.closed
+    link: '{{ repoUrl }}/pull/3'
+    actions:
+      - type: gate
+        left: '%payload.pull_request.merged%'
+        else:
+          - type: respond
+            with: reopen.md
+      - type: octokit
+        method: issues.update
+        owner: '%actions.python_pr.data.head.repo.owner.login%'
+        repo: '%actions.python_pr.data.head.repo.name%'
+        number: '%actions.python_pr.data.number%'
+        state: open
+      - type: respond
+        with: 02-go-to-python.md   
+- title: Say Hello World! with Python
+    description: If data is your thing, you'll want to learn some python
+    event: pull_request.closed
+    link: '{{ repoUrl }}/pull/4'
+    actions:
+      - type: gate
+        left: '%payload.pull_request.merged%'
+        else:
+          - type: respond
+            with: reopen.md
+      - type: octokit
+        method: issues.update
+        owner: '%actions.ruby_pr.data.head.repo.owner.login%'
+        repo: '%actions.ruby_pr.data.head.repo.name%'
+        number: '%actions.ruby_pr.data.number%'
+        state: open
+      - type: respond
+        with: 02-go-to-ruby.md
+- title: Say Hello World! with Ruby
+    description: There are many different flavors ... check out Ruby
+    event: pull_request.closed
+    link: '{{ repoUrl }}/pull/5'
+    actions:
+      - type: gate
+        left: '%payload.pull_request.merged%'
+        else:
+          - type: respond
+            with: reopen.md
+      - type: respond
+        with: 03-all-done.md        
