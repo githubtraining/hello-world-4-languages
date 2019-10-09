@@ -78,7 +78,7 @@ steps:
         with: 02-go-to-javascript.md
         data:
           url: "%actions.javascript_pr.data.html_url%"
- - title: Say Hello World! with Javascript
+  - title: Say Hello World! with Javascript
     description: Kick it up a notch with this common language
     event: pull_request.closed
     link: '{{ repoUrl }}/pull/3'
@@ -98,7 +98,7 @@ steps:
         with: 02-go-to-python.md
         data:
           url: "%actions.python_pr.data.html_url%"
-- title: Say Hello World! with Python
+  - title: Say Hello World! with Python
     description: If data is your thing, you'll want to learn some python
     event: pull_request.closed
     link: '{{ repoUrl }}/pull/4'
@@ -118,7 +118,7 @@ steps:
         with: 02-go-to-ruby.md
         data:
           url: "%actions.ruby_pr.data.html_url%"
-- title: Say Hello World! with Ruby
+  - title: Say Hello World! with Ruby
     description: There are many different flavors ... check out Ruby
     event: pull_request.closed
     link: '{{ repoUrl }}/pull/5'
